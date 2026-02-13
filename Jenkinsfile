@@ -5,16 +5,18 @@ pipeline {
             steps {
                 checkout scm
             }
-        
+        }
         stage('install Dependencies') {
             steps {
                 sh 'npm install'
             }
+        }
         
         stage('Build React App') {
             steps {
                 sh 'npm run build'
             }
+        }
         
         stage('Deploy to NGINX') {
             steps {
