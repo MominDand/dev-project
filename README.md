@@ -1,4 +1,4 @@
 
 # dev-project
-React + Vite project
+React + Vite Project
 
