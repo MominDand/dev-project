@@ -22,7 +22,7 @@ pipeline {
             steps {
                 sh '''
                 sudo rm -rf /var/www/html/*
-                sudo cp -r build/* /var/www/html
+                sudo cp -r dist/* /var/www/html
                 '''
             }
         }
