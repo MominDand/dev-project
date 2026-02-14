@@ -18,11 +18,12 @@ pipeline {
             }
         }
         
-        stage('Deploy to NGINX') {
+        stage('Deploy to Inst1') {
             steps {
                 sh '''
-                sudo rm -rf /var/www/html/*
-                sudo cp -r dist/* /var/www/html
+                ssh ubuntu@52.90.254.178 "sudo rm -rf /var/www/html/*"
+                scp -r dist/* ubuntu@52.90.254.178:/var/www/html/
+                ssh ubuntu@52.90.254.178 "sudo systemctl restart nginx"
                 '''
             }
         }
