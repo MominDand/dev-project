@@ -21,9 +21,9 @@ pipeline {
         stage('Deploy to Inst1') {
             steps {
                 sh '''
-                ssh ubuntu@52.90.254.178 "sudo rm -rf /var/www/html/*"
-                scp -r dist/* ubuntu@52.90.254.178:/var/www/html/
-                ssh ubuntu@52.90.254.178 "sudo systemctl restart nginx"
+                ssh ubuntu@54.82.202.142 "sudo rm -rf /var/www/html/*"
+                scp -r dist/* ubuntu@54.82.202.142:/var/www/html/
+                ssh ubuntu@54.82.202.142 "sudo systemctl restart nginx"
                 '''
             }
         }
